@@ -86,7 +86,7 @@ impl Dutch {
         let mut thousands = Vec::new();
         let bf_1000 = BigFloat::from(1000);
 
-        while !num.is_zero() {
+        while !num.int().is_zero() {
             thousands.push((num % bf_1000).to_u64().unwrap());
             num /= bf_1000;
         }
